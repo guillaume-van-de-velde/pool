@@ -1,5 +1,5 @@
 # Pool
-My pool at 42 school
+My pool at 42 school.
 
 In the "POOL" folder, there is all my pool codes.
 
