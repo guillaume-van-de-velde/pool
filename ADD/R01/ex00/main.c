@@ -10,7 +10,7 @@ int soluce_found()
 
 int error()
 {
-    write(1, "Error\n", 6);
+    write(2, "Error\n", 6);
     return (1);
 }
 
