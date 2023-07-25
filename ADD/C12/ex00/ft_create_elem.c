@@ -11,13 +11,3 @@ t_list *ft_create_elem(void *data)
     list->next = NULL;
     return (list);
 }
-
-int main()
-{
-    t_list *list;
-    int a = 5;
-
-    list = ft_create_elem(&a);
-    printf("%d\n", *((int *)list->data));
-    free(list);
-}

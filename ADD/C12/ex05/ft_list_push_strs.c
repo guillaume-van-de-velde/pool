@@ -29,36 +29,3 @@ t_list  *ft_list_push_strs(int size, char **strs)
     }
     return (list);
 }
-
-t_list *ft_create_elem(void *data)
-{
-    t_list *list;
-
-    list = malloc(sizeof(t_list));
-    if (!list)
-        return (NULL);
-    list->data = data;
-    list->next = NULL;
-    return (list);
-}
-
-void    print_list(t_list *list)
-{
-    while (list)
-    {
-        printf("%s\n", (char *)list->data);
-        list = list->next;
-    }
-}
-
-int main()
-{
-    char *strs[10] = {"hello", "ca va", "comment", NULL};
-    t_list  *list;
-
-    list = ft_list_push_strs(3, strs);
-    print_list(list);
-    // free(list->next->next);
-    // free(list->next);
-    // free(list);
-}
