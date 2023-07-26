@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void    for_stdin(int byte);
+
 int     ft_strlen(char *str);
 void    print_error(char *arg);
 void    print_tail(char *tail);

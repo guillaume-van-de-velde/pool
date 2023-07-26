@@ -26,7 +26,7 @@ int print_end(int byte, int fd)
         return (free(tail), 0);
     if (reader < byte + 1)
     {
-        tail[byte] = '\0';
+        tail[reader] = '\0';
         print_tail(tail);
         free(tail);
         return (1);
@@ -51,6 +51,8 @@ int ft_tail(int byte, char **argv)
     int fd;
 
     i = 0;
+    if (!argv[0])
+        return (for_stdin(byte), 1);
     while (argv[i])
     {
         fd = open(argv[i], O_RDONLY);
@@ -60,7 +62,8 @@ int ft_tail(int byte, char **argv)
         {
             if (i != 0)
                 write(1, "\n", 1);
-            print_head(argv[i]);
+            if (i != 0 || argv[i + 1])
+                print_head(argv[i]);
             if (!print_end(byte, fd))
                 return (0);
             close(fd);

@@ -1,8 +1,8 @@
-SRCS = 	ft_tail.c check_args.c print.c stdin.c
+SRCS =	ft_hexdump.c data.c result.c display_number_octets.c print.c ft_str.c stdin.c
 
 OBJS = 	${SRCS:%.c=%.o}
 
-NAME = 	ft_tail
+NAME = 	ft_hexdump
 
 CC 	= 	gcc
 

@@ -51,8 +51,6 @@ void    do_op(char *s1, char *op, char *s2)
     arr[4] = modulo;
     n1 = ft_atoi(s1);
     n2 = ft_atoi(s2);
-    printf("%d\n", n1);
-    printf("%d\n", n2);
     if (*op != '+' && *op != '-' && *op != '/' && *op != '*' && *op != '%')
         return ((void)write(1, "0\n", 2));
     
@@ -69,7 +67,6 @@ void    do_op(char *s1, char *op, char *s2)
 
 int main(int argc, char **argv)
 {
-    printf("av : %s\n", argv[2]);
     if (argc == 4)
         do_op(argv[1], argv[2], argv[3]);
 }
