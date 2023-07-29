@@ -25,8 +25,6 @@ void    resolve(t_data *data)
 {
     int len;
 
-    // for (int k = 0; data->dict[k]; k++)
-    //     printf("%s\n", data->dict[k]);
     len = ft_strlen(data->number);
     data->no_print = 1;
     recursive_resolve(data, len, 0);
