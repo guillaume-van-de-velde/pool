@@ -21,6 +21,8 @@ int check_length_and_chars(char **map, t_chars chars)
             return (0);
         i++;
     }
+    if (i != chars.line)
+        return (0);
     return (1);
 }
 

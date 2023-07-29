@@ -11,7 +11,7 @@
 
 typedef struct s_chars
 {
-    int line;
+    int     line;
     char    nul;
     char    barrier;
     char    full;
@@ -25,6 +25,19 @@ typedef struct s_data
     char    **map;
     int     error;
 }   t_data;
+
+typedef struct s_square
+{
+    int line;
+    int column;
+    int size;
+}   t_square;
+
+typedef struct s_coordinate
+{
+    int line;
+    int column;
+}   t_coordinate;
 
 #include "parsing.h"
 #include "resolve.h"
