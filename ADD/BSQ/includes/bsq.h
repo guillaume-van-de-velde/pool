@@ -26,20 +26,33 @@ typedef struct s_data
     int     error;
 }   t_data;
 
-typedef struct s_square
-{
-    int line;
-    int column;
-    int size;
-}   t_square;
-
 typedef struct s_coordinate
 {
     int line;
     int column;
 }   t_coordinate;
 
+typedef struct s_square
+{
+    t_coordinate spot;
+    int size;
+}   t_square;
+
 #include "parsing.h"
 #include "resolve.h"
+
+int ft_strlen(char *str);
+
+void    print_error();
+
+void	free_split(char **split);
+void    free_map(t_data *data);
+void    free_all(t_data *data);
+
+void    set_chars(t_chars *chars);
+void    set_data(t_data *data);
+
+void    bsq_for_file(t_data *data);
+int main(int argc, char **argv);
 
 #endif

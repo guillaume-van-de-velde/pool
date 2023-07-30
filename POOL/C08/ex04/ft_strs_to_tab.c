@@ -68,19 +68,3 @@ struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 	a[i].copy = '\0';
 	return (a);
 }
-/*
-int main(int ac, char **av)
-{
-	t_stock_str	*s;
-	s = ft_strs_to_tab(ac, av);
-	int	i;
-	i = 0;
-	printf("La taille de la struct est : %ld\n", sizeof(t_stock_str));
-	while (s[i].str != NULL)
-	{
-		printf("la reponse est %d\n", s[i].size);
-		printf("la reponse est %s\n", s[i].str);
-		printf("la reponse est %s\n\n", s[i].copy);
-		i++;
-	}
-}*/

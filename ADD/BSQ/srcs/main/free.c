@@ -21,10 +21,7 @@ void	free_split(char **split)
 
 void    free_map(t_data *data)
 {
-    data->chars.line = 0;
-    data->chars.nul = '\0';
-    data->chars.barrier = '\0';
-    data->chars.full = '\0';
+    set_chars(&data->chars);
     if (data->file)
     {
         free(data->file);

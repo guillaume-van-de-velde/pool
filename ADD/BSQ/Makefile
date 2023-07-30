@@ -1,9 +1,9 @@
-SRCS_MAIN		=	main.c error.c free.c set.c
+SRCS_MAIN		=	main.c error.c free.c set.c utils.c
 
 SRCS_PARSING	=	check_args.c check_file.c fill_chars.c \
 					ft_split.c parsing.c read_file.c
 
-SRCS_RESOLVE	=	resolve.c
+SRCS_RESOLVE	=	resolve.c square.c grey.c print_map.c
 
 SRCS_DIR		=	${addprefix main/, ${SRCS_MAIN}} \
 					${addprefix parsing/, ${SRCS_PARSING}} \
@@ -41,10 +41,10 @@ binaries 		:
 			@mkdir -p binaries/
 
 clean			:
-			rm -rf -p binaries
+			rm -rf binaries
 
 fclean			:	clean
-			${RM} ${NAME}
+			rm ${NAME}
 
 re				:	fclean all
 

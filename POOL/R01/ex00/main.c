@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 	}
 
 	comeback[4] = NULL;
-	// comeback[j] = '\0';
+	 comeback[j] = '\0';
 	ft_affichage(comeback);
 } */
 

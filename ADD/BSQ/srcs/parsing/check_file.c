@@ -13,7 +13,7 @@ int check_length_and_chars(char **map, t_chars chars)
         j = 0;
         while (map[i][j])
         {
-            if (map[i][j] != chars.nul || map[i][j] != chars.barrier)
+            if (map[i][j] != chars.nul && map[i][j] != chars.barrier)
                 return (0);
             j++;
         }
@@ -32,10 +32,10 @@ void    check_file(t_data *data)
     if (!data->map)
         (free_all(data), exit(1));
     if (data->map && (!data->map[0] || !data->map[1]))
-        return (free_map(data), (void)(error = 1));
+        return (free_map(data), (void)(data->error = 1));
     fill_chars(&data->chars, data->map[0]);
     if (data->chars.line == 0)
-        return ((void)(error = 1));
+        return ((void)(data->error = 1));
     if (!check_length_and_chars(&data->map[1], data->chars))
-        return ((void)(error = 1));
+        return ((void)(data->error = 1));
 }

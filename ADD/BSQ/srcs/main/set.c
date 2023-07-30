@@ -11,7 +11,8 @@ void    set_chars(t_chars *chars)
 void    set_data(t_data *data)
 {
     set_chars(&data->chars);
-    data->fd = NULL;
+    data->fds = NULL;
     data->file = NULL;
     data->map = NULL;
+    data->error = 0;
 }

@@ -4,15 +4,17 @@ int ft_atoi_bsq(char *str)
 {
     int result;
     int i;
+    int len;
 
     i = 0;
     result = 0;
-    while (str[i] >= '0' && str[i] <= '9')
+    len = ft_strlen(str) - 3;
+    while (str[i] >= '0' && str[i] <= '9' && i < len)
     {
         result = result * 10 + (str[i] - '0');
         i++;
     }
-    if (i == 0 || i != ft_strlen(str) - 3)
+    if (i == 0 || i != len)
         return (0);
     return (result);
 }

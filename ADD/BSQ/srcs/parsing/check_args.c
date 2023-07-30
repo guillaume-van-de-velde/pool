@@ -13,7 +13,7 @@ void    check_args(int argc, char **argv, t_data *data)
     data->fds[argc - 1] = 0;
     while (i < argc - 1)
     {
-        data->fds = open(argv[i + 1], O_RDONLY);
+        data->fds[i] = open(argv[i + 1], O_RDONLY);
         i++;
     }
 }

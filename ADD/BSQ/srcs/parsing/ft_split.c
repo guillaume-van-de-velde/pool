@@ -1,4 +1,4 @@
-#include "rush02.h"
+#include "bsq.h"
 
 int	ft_compteurdemot(char *s, char c)
 {
