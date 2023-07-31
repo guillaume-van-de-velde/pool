@@ -36,7 +36,15 @@ void    free_map(t_data *data)
 
 void    free_all(t_data *data)
 {
+    int i;
+
+    i = 0;
     if (data->fds)
+    {
+
+        while (data->fds[i])
+            close(data->fds[i++]);
         free(data->fds);
+    }
     free_map(data);
 }
