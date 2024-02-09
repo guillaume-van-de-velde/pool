@@ -1,26 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/09 15:18:26 by svan-de-          #+#    #+#             */
+/*   Updated: 2024/02/09 15:19:25 by svan-de-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PARSING_H
-#define PARSING_H
+# define PARSING_H
 
-#include "bsq.h"
+# include "bsq.h"
 
-int ft_atoi_bsq(char *str);
-void    fill_chars(t_chars *chars, char *str);
+int		ft_atoi_bsq(char *str);
+void	fill_chars(t_chars *chars, char *str);
 
-int check_length_and_chars(char **map, t_chars chars);
-void    check_file(t_data *data);
+int		check_length_and_chars(char **map, t_chars chars);
+void	check_file(t_data *data);
 
-int ft_compteurdemot(char *s, char c);
+int		ft_compteurdemot(char *s, char c);
 void	*ft_free(char **split, int j);
 char	*ft_dup2(char *s, char c);
 char	**ft_if(char **split, char *s, char c, size_t *iandj);
 char	**ft_split(char *s, char c);
 
-char    *ft_realloc(char *str, int advance);
-void    read_file(t_data *data, int num);
-void    read_stdin(t_data *data);
+char	*ft_realloc(char *str, int advance);
+void	read_file(t_data *data, int num);
+void	read_stdin(t_data *data);
 
-void    check_args(int argc, char **argv, t_data *data);
+void	check_args(int argc, char **argv, t_data *data);
 
-void    parsing(t_data *data, int num);
+void	parsing(t_data *data, int num);
 
 #endif

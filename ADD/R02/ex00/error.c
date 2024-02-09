@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/09 20:56:44 by svan-de-          #+#    #+#             */
+/*   Updated: 2024/02/09 21:17:02 by svan-de-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "rush02.h"
 
-int print_error()
+int	print_error(void)
 {
-    write(2, "Error\n", 6);
-    return (0);
+	write(2, "Error\n", 6);
+	return (0);
 }
 
-int print_dict_error()
+int	print_dict_error(void)
 {
-    write(2, "Dict Error\n", 11);
-    return (0);
+	write(2, "Dict Error\n", 11);
+	return (0);
 }

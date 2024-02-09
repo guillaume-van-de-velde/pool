@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/09 20:57:05 by svan-de-          #+#    #+#             */
+/*   Updated: 2024/02/09 21:19:10 by svan-de-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "rush02.h"
 
 int	ft_isset(char c, char *set)
@@ -33,7 +45,7 @@ char	*ft_strtrim(char *s1, char *set)
 		return (free(s1), NULL);
 	while (start < end)
 		str[i++] = s1[start++];
-    free(s1);
+	free(s1);
 	str[i] = '\0';
 	return (str);
 }

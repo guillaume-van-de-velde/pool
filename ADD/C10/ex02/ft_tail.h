@@ -1,29 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tail.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/09 19:55:59 by svan-de-          #+#    #+#             */
+/*   Updated: 2024/02/09 19:55:59 by svan-de-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_TAIL_H
-#define FT_TAIL_H
+# define FT_TAIL_H
 
-#include <libgen.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+# include <libgen.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <errno.h>
+# include <string.h>
+# include <stdlib.h>
+# include <stdio.h>
 
-void    for_stdin(int byte);
+void	for_stdin(int byte);
 
-int     ft_strlen(char *str);
-void    print_error(char *arg);
-void    print_tail(char *tail);
-void    print_head(char *argv);
+int		ft_strlen(char *str);
+void	print_error(char *arg);
+void	print_tail(char *tail);
+void	print_head(char *argv);
 
-int ft_atoi(char *str);
-int check_args(int argc, char **argv);
+int		ft_atoi(char *str);
+int		check_args(int argc, char **argv);
 
-void    gap(char *str, int byte);
-int print_end(int byte, int fd);
-int ft_tail(int byte, char **argv);
-int main(int argc, char **argv);
+void	gap(char *str, int byte);
+int		print_end(int byte, int fd);
+int		ft_tail(int byte, char **argv);
+int		main(int argc, char **argv);
 
 #endif

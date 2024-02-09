@@ -1,40 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/09 19:56:15 by svan-de-          #+#    #+#             */
+/*   Updated: 2024/02/09 19:56:36 by svan-de-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_tail.h"
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
 
-void    print_error(char *arg)
+void	print_error(char *arg)
 {
-    char *str;
+	char	*str;
 
-    str = strerror(errno);
-    write(2, "tail: cannot open '", 19);
-    write(2, arg, ft_strlen(arg));
-    write(2, "' for reading: ", 15);
-    write(2, str, ft_strlen(str));
-    write(2, "\n", 1);
+	str = strerror(errno);
+	write(2, "tail: cannot open '", 19);
+	write(2, arg, ft_strlen(arg));
+	write(2, "' for reading: ", 15);
+	write(2, str, ft_strlen(str));
+	write(2, "\n", 1);
 }
 
-void    print_tail(char *tail)
+void	print_tail(char *tail)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (tail[i])
-        i++;
-    write(1, tail, i);
+	i = 0;
+	while (tail[i])
+		i++;
+	write(1, tail, i);
 }
 
-void    print_head(char *argv)
+void	print_head(char *argv)
 {
-    write(1, "==> ", 4);
-    write(1, argv, ft_strlen(argv));
-    write(1, " <==\n", 5);
+	write(1, "==> ", 4);
+	write(1, argv, ft_strlen(argv));
+	write(1, " <==\n", 5);
 }
