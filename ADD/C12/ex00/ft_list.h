@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:14:58 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:15:26 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:40:51 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include <stdio.h>
 # include <stddef.h>
 
-t_list	*ft_create_elem(void *data);
-
 typedef struct s_list
 {
 	struct s_list	*next;
 	void			*data;
 }	t_list;
+
+t_list	*ft_create_elem(void *data);
 
 #endif

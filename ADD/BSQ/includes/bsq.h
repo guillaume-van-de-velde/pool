@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:16:37 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 15:23:06 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:09:40 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,35 +21,7 @@
 # include <fcntl.h>
 # include <stddef.h>
 
-typedef struct s_chars
-{
-	int		line;
-	char	nul;
-	char	barrier;
-	char	full;
-}	t_chars;
-
-typedef struct s_data
-{
-	t_chars	chars;
-	int		*fds;
-	char	*file;
-	char	**map;
-	int		error;
-}	t_data;
-
-typedef struct s_coordinate
-{
-	int	line;
-	int	column;
-}	t_coordinate;
-
-typedef struct s_square
-{
-	t_coordinate	spot;
-	int				size;
-}	t_square;
-
+# include "structures.h"
 # include "parsing.h"
 # include "resolve.h"
 

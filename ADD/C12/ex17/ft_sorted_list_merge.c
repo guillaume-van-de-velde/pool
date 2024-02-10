@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:40:31 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:40:43 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:01:31 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	swap_list(t_list **list, t_list **begin_list2, t_list **tmp)
 	*list = *tmp;
 }
 
-void	ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2, int (*cmp)())
+void	ft_sorted_list_merge(t_list **begin_list1, t_list *begin_list2,
+int (*cmp)())
 {
 	t_list	*list;
 	t_list	*tmp;

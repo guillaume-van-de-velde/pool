@@ -1,33 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   grey.c                                             :+:      :+:    :+:   */
+/*   structures.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/09 15:13:40 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/10 17:02:32 by svan-de-         ###   ########.fr       */
+/*   Created: 2024/02/10 17:06:33 by svan-de-          #+#    #+#             */
+/*   Updated: 2024/02/10 17:08:39 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsq.h"
+#ifndef STRUCTURES_H
+# define STRUCTURES_H
 
-void	fill_grey(char **map, t_coordinate stock, t_coordinate barrier,
-char barrier_char)
+# include "bsq.h"
+
+typedef struct s_chars
 {
-	int	i;
-	int	j;
+	int		line;
+	char	nul;
+	char	barrier;
+	char	full;
+}	t_chars;
 
-	i = stock.line;
-	while (i <= barrier.line)
-	{
-		j = stock.column;
-		while (j <= barrier.column)
-		{
-			if (map[i][j] != barrier_char)
-				map[i][j] = '+';
-			j++;
-		}
-		i++;
-	}
-}
+typedef struct s_data
+{
+	t_chars	chars;
+	int		*fds;
+	char	*file;
+	char	**map;
+	int		error;
+}	t_data;
+
+typedef struct s_coordinate
+{
+	int	line;
+	int	column;
+}	t_coordinate;
+
+typedef struct s_square
+{
+	t_coordinate	spot;
+	int				size;
+}	t_square;
+
+#endif

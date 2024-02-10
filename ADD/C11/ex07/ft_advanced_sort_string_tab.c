@@ -6,11 +6,11 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:13:27 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:13:42 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:08:10 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+void	ft_advanced_sort_string_tab(char **tab, int (*cmp)(char *, char *))
 {
 	int		i;
 	char	*tmp;

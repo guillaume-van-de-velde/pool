@@ -6,13 +6,13 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:14:20 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 15:15:38 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:00:49 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-char    *replace_line(t_data *data, t_square biggest)
+char	*replace_line(t_data *data, t_square biggest)
 {
 	char			*map_result;
 	t_coordinate	stock;
@@ -27,7 +27,8 @@ char    *replace_line(t_data *data, t_square biggest)
 		biggest.spot.column = stock.column;
 		while (biggest.spot.column < biggest.size + stock.column)
 		{
-			map_result[biggest.spot.line * len + biggest.spot.column] = data->chars.full;
+			map_result[biggest.spot.line * len
+				+ biggest.spot.column] = data->chars.full;
 			biggest.spot.column++;
 		}
 		biggest.spot.line++;

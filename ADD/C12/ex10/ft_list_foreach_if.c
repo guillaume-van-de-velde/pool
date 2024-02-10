@@ -6,13 +6,14 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:25:05 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:25:07 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:01:10 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *), void *data_ref, int (*cmp)())
+void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
+void *data_ref, int (*cmp)())
 {
 	while (begin_list)
 	{

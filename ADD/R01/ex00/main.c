@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:50:15 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:50:40 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 21:53:17 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	soluce_found(void)
 {
-	static int  soluce = 0;
+	static int	soluce = 0;
 
 	soluce++;
 	return (soluce);

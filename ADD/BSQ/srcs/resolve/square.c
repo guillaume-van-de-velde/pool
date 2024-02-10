@@ -6,13 +6,14 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:15:42 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 15:16:08 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:01:41 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	check_line_and_column(char **map, t_coordinate current, t_coordinate stock, t_chars *chars)
+int	check_line_and_column(char **map, t_coordinate current,
+t_coordinate stock, t_chars *chars)
 {
 	int	stock_index;
 
@@ -30,7 +31,8 @@ int	check_line_and_column(char **map, t_coordinate current, t_coordinate stock, 
 	{
 		if (map[current.line][stock_index] == chars->barrier)
 		{
-			fill_grey(map, stock, (t_coordinate){current.line, stock_index}, chars->barrier);
+			fill_grey(map, stock, (t_coordinate){current.line, stock_index},
+				chars->barrier);
 			return (0);
 		}
 		current.line--;

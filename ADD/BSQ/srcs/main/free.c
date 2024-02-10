@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 15:09:34 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 15:10:00 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/10 16:58:19 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ void	free_all(t_data *data)
 	i = 0;
 	if (data->fds)
 	{
-
 		while (data->fds[i])
 			close(data->fds[i++]);
 		free(data->fds);
