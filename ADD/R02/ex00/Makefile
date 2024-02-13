@@ -1,6 +1,7 @@
 SRCS = 	main.c parsing.c resolve.c check_args.c \
 		check_dict_lines.c create_dict.c dict.c error.c \
-		ft_split.c len.c utils.c print_result.c
+		ft_split.c len.c utils.c print_result.c \
+		fill_dict.c check_dict_lines_2.c good_line.c
 
 OBJS = 	${SRCS:%.c=%.o}
 

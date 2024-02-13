@@ -6,45 +6,53 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 19:56:44 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 19:57:07 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:57:00 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_tail.h"
 
-void	for_stdin(int byte)
+int	read_on_stdin(int byte, ssize_t reader, char *tail, char *c)
 {
-	char	*tail;
 	int		i;
-	ssize_t	reader;
-	char	c;
 
 	i = 0;
-	reader = 1;
-	tail = malloc(byte + 1);
-	if (!tail)
-		return ;
 	while (i < byte && reader > 0)
 	{
 		reader = read(0, &tail[i], 1);
 		if (reader < 0)
-			return (free(tail));
+			return (0);
 		i++;
 	}
 	if (reader == 0)
 		tail[i - 1] = '\0';
 	while (reader > 0)
 	{
-		reader = read(0, &c, 1);
+		reader = read(0, c, 1);
 		if (reader < 0)
-			return (free(tail));
+			return (0);
 		if (reader)
 		{
-			tail[byte] = c;
+			tail[byte] = *c;
 			gap(tail, byte);
 		}
 		i++;
 	}
+	return (1);
+}
+
+void	for_stdin(int byte)
+{
+	char	*tail;
+	ssize_t	reader;
+	char	c;
+
+	reader = 1;
+	tail = malloc(byte + 1);
+	if (!tail)
+		return ;
+	if (!read_on_stdin(byte, reader, tail, &c))
+		return (free(tail));
 	tail[byte] = '\0';
 	print_tail(tail);
 	free(tail);

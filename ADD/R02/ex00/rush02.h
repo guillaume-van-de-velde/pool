@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:57:03 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:58:52 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:36:05 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,12 @@ char	**ft_split(char *s, char c);
 int		print_error(void);
 int		print_dict_error(void);
 
+char	*fill_dict_create_long(int index);
 char	*fill_dict_create_hundred(int index);
 char	*fill_dict_create_twenty(int index);
 char	*fill_dict_create_ten(int index);
 char	*fill_dict_create(int index);
+
 void	create_dict(t_data *data);
 
 void	keep_only_translate(t_data *data);

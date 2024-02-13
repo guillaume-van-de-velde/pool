@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 19:54:21 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 19:55:11 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:53:55 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,21 @@ void	gap(char *str, int byte)
 	}
 }
 
+int	print_end_check(ssize_t reader, char *tail, int byte, int fd)
+{
+	while (reader > 0)
+	{
+		gap(tail, byte);
+		reader = read(fd, &tail[byte], 1);
+		if (reader < 0)
+			return (free(tail), 0);
+	}
+	return (1);
+}
+
 int	print_end(int byte, int fd)
 {
 	char	*tail;
-	int		i;
 	int		reader;
 
 	tail = malloc(byte + 1);
@@ -43,14 +54,8 @@ int	print_end(int byte, int fd)
 		free(tail);
 		return (1);
 	}
-	while (reader > 0)
-	{
-		gap(tail, byte);
-		reader = read(fd, &tail[byte], 1);
-		if (reader < 0)
-			return (free(tail), 0);
-		i++;
-	}
+	if (!print_end_check(reader, tail, byte, fd))
+		return (0);
 	tail[byte] = '\0';
 	print_tail(tail);
 	free(tail);

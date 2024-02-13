@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:56:42 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 21:16:48 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:30:48 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ char	*get_file(int fd)
 	if (!str)
 		return (print_error(), NULL);
 	str[1000] = '\0';
-	while ((reader = read(fd, &str[i], 100)) > 0)
+	reader = read(fd, &str[i], 100);
+	while (reader > 0)
 	{
 		i += reader;
 		if (i % 1000 == 0)
@@ -51,6 +52,7 @@ char	*get_file(int fd)
 			if (!str)
 				return (print_error(), NULL);
 		}
+		reader = read(fd, &str[i], 100);
 	}
 	if (reader == -1)
 		return (free(str), print_dict_error(), NULL);

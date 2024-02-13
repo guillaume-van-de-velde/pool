@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 19:57:51 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 19:58:14 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:19:25 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,11 @@ int	file_hexdump(t_data *data, int i)
 	return (1);
 }
 
-void	ft_hexdump(t_data *data)
+void	hexdump_while(t_data *data)
 {
 	int	i;
 
 	i = 0;
-	data->str[16] = '\0';
-	if (data->stdin)
-		return (for_stdin(data));
 	while (data->files[i])
 	{
 		data->fd = open(data->files[i], O_RDONLY);
@@ -70,6 +67,14 @@ void	ft_hexdump(t_data *data)
 		}
 		i++;
 	}
+}
+
+void	ft_hexdump(t_data *data)
+{
+	data->str[16] = '\0';
+	if (data->stdin)
+		return (for_stdin(data));
+	hexdump_while(data);
 	if (data->input)
 	{
 		display_number_octets(data->octets, data->option);

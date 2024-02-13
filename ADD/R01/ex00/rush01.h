@@ -6,7 +6,7 @@
 /*   By: svan-de- <svan-de-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 20:51:08 by svan-de-          #+#    #+#             */
-/*   Updated: 2024/02/09 20:51:57 by svan-de-         ###   ########.fr       */
+/*   Updated: 2024/02/13 16:36:22 by svan-de-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+typedef struct s_index
+{
+	int	i;
+	int	j;
+	int	k;
+	int	index_dr;
+}	t_index;
 
 int		*get_board(char *str);
 
@@ -31,7 +39,7 @@ int		main(int argc, char **argv);
 int		ft_strlen(char *str);
 int		parsing(char *str);
 
-int		check_good_buildings(int *view, int ask);
+int		check(int *view, int ask);
 int		good_view(int *board, int *soluce);
 
 void	back_tracking(int *board, int *soluce, int advance);
