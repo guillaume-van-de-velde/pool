@@ -58,6 +58,14 @@ void	display_octets_hex_option(char *str)
 		(ft_putchar(' '), at_print--);
 }
 
+void	increment_index(char *str, int *i)
+{
+	if (str[*i + 1])
+		*i += 2;
+	else
+		(*i)++;
+}
+
 void	display_octets_hex(char *str)
 {
 	int	i;
@@ -66,7 +74,7 @@ void	display_octets_hex(char *str)
 
 	i = 0;
 	at_print = 40;
-	while (str[i] && str[i + 1])
+	while (str[i])
 	{
 		len = 0;
 		ft_putchar(' ');
@@ -79,7 +87,7 @@ void	display_octets_hex(char *str)
 		if (len < 2)
 			ft_putchar('0');
 		ft_putnbr(str[i]);
-		i += 2;
+		increment_index(str, &i);
 		at_print -= 5;
 	}
 	while (at_print > 0)

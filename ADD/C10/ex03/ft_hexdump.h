@@ -51,6 +51,7 @@ void	display_number_octets(int octets, int option);
 
 void	display_octets_char(char *str);
 void	display_octets_hex_option(char *str);
+void	increment_index(char *str, int *i);
 void	display_octets_hex(char *str);
 void	result_management(t_data *data);
 
